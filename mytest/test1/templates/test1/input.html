@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+</head>
+<body>
+    <form action="{% url 'test1:input'%}" method="post">
+    {% csrf_token %}
+    insert num :
+    <input type="text" name="add_number" >
+    <input type="submit">
+
+</form>
+
+</body>
+</html>
