@@ -19,6 +19,6 @@ urlpatterns = [
 
     path('polls/<int:question_id>/delete/', views.delete, name='del'),
 
-    path('polls/delete', views.delete_question, name='del_question'),
+    path('polls/delete', views.delete_question, name='delete_question'),
 
 ]

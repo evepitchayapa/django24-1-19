@@ -61,9 +61,9 @@ def delete (request,question_id):
         # user hits the Back button.
     return HttpResponseRedirect(reverse('polls:vote', args=(question.id,)))
 
+
 def delete_question (request,question_id):
     question = get_object_or_404(Question, pk=question_id)
     selected_choice = question.objects.get(pk = request.POST['Question'])
     selected_choice.delete()
-
-    return HttpResponseRedirect(reverse('polls:index'))
+    return HttpResponseRedirect(reverse('polls:index', args=(question.id,)))
