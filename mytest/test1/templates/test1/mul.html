@@ -9,7 +9,11 @@
 {% for item in number %}
     {{num}}* {{forloop.counter}} = {{item}}<br>
 {% endfor %}
-
+<br>>
+ใช้เลขนี้ไปแล้ว :
+{% for i in stat %}
+    {{i}}
+{% endfor %}
 <!--{{num}}*1 = {{number1}}<br>-->
 <!--{{num}}*2 = {{number2}}<br>-->
 <!--{{num}}*3 = {{number3}}<br>-->
