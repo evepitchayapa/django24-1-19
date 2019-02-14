@@ -9,11 +9,14 @@
 {% for item in number %}
     {{num}}* {{forloop.counter}} = {{item}}<br>
 {% endfor %}
-<br>>
-ใช้เลขนี้ไปแล้ว :
-{% for i in stat %}
-    {{i}}
+<br>
+จำนวนครั้งที่ค้นหา :<br>
+{% for data in lstDataNumber %}
+    เลข {{data.number_text}} --> {{data.counter_number}}<br>
 {% endfor %}
+
+
+
 <!--{{num}}*1 = {{number1}}<br>-->
 <!--{{num}}*2 = {{number2}}<br>-->
 <!--{{num}}*3 = {{number3}}<br>-->

@@ -29,12 +29,14 @@ def showresult (request):
     for i in range(12):
         lstval.append((i+1)*num)
 
-    data_number = Number
-    update_data = data_number.number_text.get(pk=num)
+    data_number = Number.objects.all
+    update_data = Number.objects.get(pk=num)
     update_data.counter_number += 1
+    update_data.save()
 
 
-    context = {'num':num,'number':lstval}
+
+    context = {'lstDataNumber':data_number,'num':num,'number':lstval}
 
     return render(request,'test1/mul.html',context)
 
