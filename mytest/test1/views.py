@@ -29,10 +29,20 @@ def showresult (request):
     for i in range(12):
         lstval.append((i+1)*num)
 
-    data_number = Number.objects.all
-    update_data = Number.objects.get(pk=num)
-    update_data.counter_number += 1
-    update_data.save()
+
+    data_number = Number.objects.all()
+    for i in range(len(data_number)+1):
+        i+=1
+        if i <= len(data_number):
+            if str(num) == str(Number.objects.get(pk = int(i))):
+                update = Number.objects.get(pk = int(i) )
+                update.counter_number += 1
+                update.save()
+                break
+        else:
+            create = Number(number_text = str(num),counter_number = 1)
+            create.save()
+    data_number = Number.objects.all()
 
 
 
