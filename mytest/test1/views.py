@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-def show_mul (request,num):
+from .models import Number
 
+def show_mul (request,num):
     lstval = []
     for i in range(12):
         lstval.append(str((i+1)*num))
@@ -22,27 +23,18 @@ def input (request):
 
 
 def showresult (request):
+
     num = int(request.POST['add_number'])
-    stat={}
-    for i in stat:
-        if num == stat[i]:
-            stat[i] = int(stat[i])+1
-        else:
-            stat[i] = 1
     lstval = []
     for i in range(12):
         lstval.append((i+1)*num)
 
-    for i in stat:
-        print (i)
-        if ('num'+str(num)) == i:
-            stat[i] +=1
-            break
-        else:
-            stat['num'+str(num)]  = 1
-            break
+    data_number = Number
+    update_data = data_number.number_text.get(pk=num)
+    update_data.counter_number += 1
 
-    context = {'num':num,'number':lstval,'stat':stat}
+
+    context = {'num':num,'number':lstval}
 
     return render(request,'test1/mul.html',context)
 
