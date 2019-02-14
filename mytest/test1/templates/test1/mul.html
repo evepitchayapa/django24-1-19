@@ -6,15 +6,22 @@
 </head>
 <body>
 
-    {{number}} * 1 = {{num1}}<br>
-    {{number}} * 2 = {{num2}}<br>
-    {{number}} * 3 = {{num3}}<br>
-    {{number}} * 4 = {{num4}}<br>
-    {{number}} * 5 = {{num5}}<br>
-    {{number}} * 6 = {{num6}}<br>
-    {{number}} * 7 = {{num7}}<br>
-    {{number}} * 8 = {{num8}}<br>
-    {{number}} * 9 = {{num9}}<br>
+{% for item in number %}
+    {{num}}* {{forloop.counter}} = {{item}}<br>
+{% endfor %}
+
+<!--{{num}}*1 = {{number1}}<br>-->
+<!--{{num}}*2 = {{number2}}<br>-->
+<!--{{num}}*3 = {{number3}}<br>-->
+<!--{{num}}*4 = {{number4}}<br>-->
+<!--{{num}}*5 = {{number5}}<br>-->
+<!--{{num}}*6 = {{number6}}<br>-->
+<!--{{num}}*7 = {{number7}}<br>-->
+<!--{{num}}*8 = {{number8}}<br>-->
+<!--{{num}}*9 = {{number9}}<br>-->
+<!--{{num}}*10 = {{number10}}<br>-->
+<!--{{num}}*11 = {{number11}}<br>-->
+<!--{{num}}*12 = {{number12}}<br>-->
 
 
 
